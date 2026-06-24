@@ -1,0 +1,68 @@
+/* ── RECLAMACIONES PAGE ── */
+.rec-hero { background: #1A1A1A; color: #fff; padding: 48px 20px; text-align: center; }
+.rec-hero-inner { max-width: 600px; margin: 0 auto; }
+.libro-icon { font-size: 48px; margin-bottom: 14px; }
+.rec-hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 10px; }
+.rec-hero p { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+.rec-container { max-width: 760px; margin: 0 auto; padding: 40px 20px 80px; }
+
+.rec-infobox { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 36px; }
+.rec-info-item { background: #F4F4F4; border-radius: 10px; padding: 16px; }
+.rec-info-item strong { display: block; font-size: 13px; font-weight: 700; color: #1A1A1A; margin-bottom: 4px; }
+.rec-info-item span { font-size: 12.5px; color: #767676; }
+
+/* FORM */
+.rec-form { background: #fff; border: 1px solid #E8E8E8; border-radius: 16px; padding: 36px; }
+
+.rec-section-title { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 800; color: #1A1A1A; margin: 28px 0 20px; padding-top: 20px; border-top: 1px solid #F0F0F0; }
+.rec-section-title:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+.rec-num { width: 28px; height: 28px; background: #CC0000; color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; flex-shrink: 0; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-full { grid-column: 1 / -1; }
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-size: 13px; font-weight: 600; color: #2C2C2C; }
+.form-group input,
+.form-group select,
+.form-group textarea { font-family: 'Outfit', sans-serif; font-size: 14px; color: #1A1A1A; background: #FAFAFA; border: 1.5px solid #E0E0E0; border-radius: 8px; padding: 10px 14px; outline: none; transition: border .2s, background .2s; }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: #CC0000; background: #fff; }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #AAAAAA; }
+.form-group textarea { resize: vertical; line-height: 1.55; }
+.form-group select { cursor: pointer; }
+
+/* RADIO */
+.radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.radio-opt { cursor: pointer; }
+.radio-opt input { display: none; }
+.radio-box { display: block; border: 2px solid #E0E0E0; border-radius: 10px; padding: 14px 16px; transition: border-color .18s, background .18s; }
+.radio-opt input:checked + .radio-box { border-color: #CC0000; background: #FFF0F0; }
+.radio-box strong { display: block; font-size: 14px; font-weight: 700; color: #1A1A1A; margin-bottom: 2px; }
+.radio-box small { font-size: 12px; color: #767676; }
+
+/* CHECKBOX */
+.form-check { display: flex; align-items: flex-start; gap: 10px; margin: 20px 0; }
+.form-check input[type="checkbox"] { width: 18px; height: 18px; margin-top: 1px; accent-color: #CC0000; flex-shrink: 0; cursor: pointer; }
+.form-check label { font-size: 13px; color: #4A4A4A; line-height: 1.5; cursor: pointer; }
+.form-check a { color: #CC0000; text-decoration: underline; }
+
+/* SUCCESS */
+.rec-success { display: flex; align-items: flex-start; gap: 14px; background: #E8F8EE; border: 1px solid #A8DEC0; border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; }
+.rec-success span { font-size: 24px; flex-shrink: 0; }
+.rec-success strong { display: block; font-size: 14px; font-weight: 700; color: #1A5C3A; margin-bottom: 4px; }
+.rec-success p { font-size: 13px; color: #2A7A50; }
+
+.btn-submit { width: 100%; padding: 15px; font-size: 16px; font-weight: 700; margin-bottom: 16px; border-radius: 10px; }
+
+.rec-legal { font-size: 12px; color: #999; text-align: center; line-height: 1.6; }
+
+@media (max-width: 600px) {
+  .rec-infobox { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .radio-group { grid-template-columns: 1fr; }
+  .rec-form { padding: 24px 18px; }
+}
