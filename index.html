@@ -9,19 +9,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<!-- CART SIDEBAR -->
+<div id="cart-sidebar">
+  <div class="cart-head">
+    <h2>🛒 Tu carrito</h2>
+    <button id="cart-close">✕</button>
+  </div>
+  <div id="cart-body"></div>
+  <div id="cart-footer">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cart-total">S/. 0.00</span>
+    </div>
+    <button class="btn-wa-cart" onclick="pedirPorWhatsApp()">
+      <svg width="18" height="18" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Pedir por WhatsApp
+    </button>
+    <p class="cart-note">Te contactaremos para confirmar tu pedido.</p>
+  </div>
+</div>
 <body>
 
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ti">🚚 Envíos GRATIS en Lima desde S/100</span>
-    <span class="ti">💳 Hasta 6 cuotas sin intereses</span>
-    <span class="ti">🔄 30 días para cambios y devoluciones</span>
+    <span class="ti">
+      <svg width="14" height="14" fill="white" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      COMPRA RAPIDO POR WhatsApp
+    </span>
+    <span class="ti">🚚 Envíos GRATIS en Lima desde + 2 productos</span>
+    <span class="ti">
+      <svg width="14" height="14" fill="white" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      COMPRA RAPIDO POR WHATSAPP
+    </span>
+    <span class="ti">🔄 Garantia por producto</span>
     <span class="ti">✅ +4,800 pedidos entregados</span>
     <span class="ti">📦 Despacho en 24-48h</span>
-    <span class="ti">🚚 Envíos GRATIS en Lima desde S/100</span>
-    <span class="ti">💳 Hasta 6 cuotas sin intereses</span>
-    <span class="ti">🔄 30 días para cambios y devoluciones</span>
+    <span class="ti">🚚 Envíos GRATIS en Lima desde + 2 productos</span>
+    <span class="ti">
+      <svg width="14" height="14" fill="white" viewBox="0 0 24 24" style="vertical-align:middle;margin-right:4px">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      COMPRA RAPIDO POR WHATSAPP
+    </span>
+    <span class="ti">🔄 Garantia por producto</span>
     <span class="ti">✅ +4,800 pedidos entregados</span>
     <span class="ti">📦 Despacho en 24-48h</span>
   </div>
@@ -34,20 +72,16 @@
       <span></span><span></span><span></span>
     </button>
     <a href="index.html" class="logo">Comuni<span>K2</span></a>
+    <!-- NAV -->
     <nav class="main-nav">
-      <a href="#">Catálogo</a>
-      <a href="#">Soportes</a>
-      <a href="#">Cargadores</a>
-      <a href="#">Mousepads</a>
-      <a href="#">Ofertas <em class="nav-badge">Hot</em></a>
+      <a href="index.html">Inicio</a>
+      <a href="#productos">productos</a>
+      <a href="#offert">Ofertas <em class="nav-badge">Hot</em></a>
+      <a href="pages/nosotros.html">Nosotros</a>
+      <a href="pages/contacto.html">contacto</a>
     </nav>
     <div class="header-right">
-      <button class="icon-btn" aria-label="Buscar">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </button>
-      <button class="icon-btn" aria-label="Cuenta">
-        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      </button>
+      
       <a href="#" class="cart-btn">
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
         <span class="cart-count">0</span>
@@ -59,26 +93,26 @@
 <!-- HERO SLIDER -->
 <section class="hero">
   <div class="hero-slides">
-    <div class="hero-slide active" style="background-image: url('images/banners/banner1.jpg')">
+    <div class="hero-slide active" style="background-image: url('images/banners/banner1.png')">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-eyebrow">Nuevo lanzamiento</p>
-        <h1>Accesorios que<br><span>te mueven</span></h1>
-        <p class="hero-sub">Soportes, cargadores y más para tu día a día en Lima.</p>
+        <h1>Muebles que<br><span>te confortan</span></h1>
+        <p class="hero-sub">Muebles de Oficina y Escritorio</p>
         <div class="hero-ctas">
-          <a href="#" class="btn-red">Ver catálogo</a>
-          <a href="#" class="btn-outline-white">Ofertas del día</a>
+          <!-- <a href="#" class="btn-red">Ver catálogo</a> -->
+          <a href="#offert" class="btn-outline-white">Oferta del día</a>
         </div>
       </div>
     </div>
-    <div class="hero-slide" style="background-image: url('images/banners/banner2.jpg')">
+    <div class="hero-slide" style="background-image: url('images/banners/banner2.png')">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-eyebrow">Lo más vendido</p>
-        <h1>Tu escritorio,<br><span>sin cables</span></h1>
-        <p class="hero-sub">Cargadores inalámbricos y power banks para trabajar libre.</p>
+        <h1>Tu escritorio,<br><span>mas cómodo</span></h1>
+        <p class="hero-sub">sillas para escritorios y oficinas</p>
         <div class="hero-ctas">
-          <a href="#" class="btn-red">Ver ahora</a>
+          <a href="#productos" class="btn-red">Ver ahora</a>
         </div>
       </div>
     </div>
@@ -100,11 +134,13 @@
     </div>
     <div class="trust-item">
       <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
-      <div><strong>Cambios fáciles</strong><span>Hasta 30 días</span></div>
+      <div><strong>Cambios fáciles</strong><span>Garantia de por compra</span></div>
     </div>
     <div class="trust-item">
-      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-      <div><strong>Hasta 6 cuotas</strong><span>Sin intereses</span></div>
+      <svg width="28" height="28" fill="#25D366" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+      <div><strong>Compra rápido</strong><span>Por WhatsApp</span></div>
     </div>
     <div class="trust-item">
       <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -113,137 +149,133 @@
   </div>
 </div>
 
-<!-- CATEGORÍAS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Soluciones para ti</h2>
-      <p>Encuentra lo que necesitas para tu espacio de trabajo</p>
-      <a href="#" class="ver-todo">Ver todo ›</a>
-    </div>
-    <div class="cat-grid">
-      <a href="#" class="cat-card">
-        <div class="cat-img" style="background-image: url('images/categorias/soportes.jpeg')">
-          <div class="cat-overlay"></div>
-          <span>Soportes & Stands</span>
-        </div>
-      </a>
-      <a href="#" class="cat-card">
-        <div class="cat-img" style="background-image: url('images/categorias/cargadores.jpeg')">
-          <div class="cat-overlay"></div>
-          <span>Power Banks & Cargadores</span>
-        </div>
-      </a>
-      <a href="#" class="cat-card">
-        <div class="cat-img" style="background-image: url('images/categorias/mousepads.jpeg')">
-          <div class="cat-overlay"></div>
-          <span>Mousepads</span>
-        </div>
-      </a>
-      <a href="#" class="cat-card">
-        <div class="cat-img" style="background-image: url('images/categorias/accesorios.jpeg')">
-          <div class="cat-overlay"></div>
-          <span>Accesorios</span>
-        </div>
-      </a>
+<!-- Oferta del dia -->
+<!-- OFERTA DEL DÍA -->
+ <section id="offert">
+  <div class="oferta-hero" >
+    <img src="images/banners/banner2.png" alt="Silla Ergonómica Dex">
+    <div class="oferta-overlay"></div>
+    <div class="oferta-content">
+      <div class="oferta-eyebrow">🔥 Oferta del día</div>
+      <h2>La silla que tu espalda<br>estaba esperando</h2>
+      <div class="oferta-precios">
+        <span class="oferta-antes">Antes <s>S/. 700.00</s></span>
+        <span class="oferta-ahora">S/. 599.00</span>
+        <span class="oferta-descuento">-14%</span>
+      </div>
+      <div class="oferta-countdown">
+        <div class="cd-item"><span id="cd-h">08</span><small>horas</small></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span id="cd-m">45</span><small>min</small></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-item"><span id="cd-s">00</span><small>seg</small></div>
+      </div>
+      <a href="pages/producto.html" class="btn-red">Ver producto →</a>
     </div>
   </div>
 </section>
 
+
 <!-- PRODUCTOS DESTACADOS -->
-<section class="section bg-light">
+<section class="section bg-light" id="productos">
   <div class="container">
     <div class="section-header">
-      <h2>Lo más vendido</h2>
+      <h2>Productos</h2>
       <p>Los productos favoritos de nuestros clientes</p>
-      <a href="#" class="ver-todo">Ver todo ›</a>
+     
     </div>
-    <div class="product-grid">
+    <div class="product-grid" >
 
       <div class="product-card">
-        <a href="producto.html" class="product-img-wrap">
+        <a href="pages/producto.html" class="product-img-wrap">
           <img src="images/productos/prod1-a.jpeg" alt="Soporte laptop" class="img-main">
           <img src="images/productos/prod1-b.jpeg" alt="Soporte laptop hover" class="img-hover">
-          <span class="badge-discount">-26%</span>
+          <span class="badge-discount">-14%</span>
         </a>
         <div class="product-info">
           <p class="product-brand">ComuniK2</p>
-          <h3><a href="producto.html">Silla De Escritorio Dex Full Malla - Sentaris </a></h3>
+          <h3><a href="pages/producto.html">Silla Ergonómica Full Malla - Dalas Ultra Gris </a></h3>
+          <h4><a href="pages/producto.html">Color: gris 🔘 </a></h4>
           <div class="product-stars">★★★★★ <span>(42)</span></div>
           <div class="product-price">
-            <span class="price-now">S/. 111.00</span>
-            <span class="price-old">S/. 149.90</span>
+            <span class="price-now">S/ 599.00</span>
+            <span class="price-old">S/ 700.00</span>
           </div>
           <button class="btn-add">Añadir al carrito</button>
         </div>
       </div>
 
       <div class="product-card">
-        <a href="producto.html" class="product-img-wrap">
+        <a href="pages/producto_2.html" class="product-img-wrap">
           <img src="images/productos/prod2-a.jpeg" alt="Billetera MagSafe" class="img-main">
           <img src="images/productos/prod2-b.jpeg" alt="Billetera MagSafe hover" class="img-hover">
-          <span class="badge-discount">-45%</span>
+          <span class="badge-discount">-14%</span>
           <span class="badge-hot">🔥 Top ventas</span>
         </a>
         <div class="product-info">
           <p class="product-brand">ComuniK2</p>
-          <h3><a href="producto.html">Silla De Escritorio Dex Full Malla - Sentaris</a></h3>
-          <div class="product-stars">★★★★☆ <span>(8)</span></div>
+          <h3><a href="pages/producto_2.html">Silla Ergonómica Full Malla - Dalas - negro</a></h3>
+          <h4><a href="pages/producto_2.html">Color:  ⚫ </a></h4>
+          <div class="product-stars">★★★★☆ <span>(+99)</span></div>
           <div class="product-price">
-            <span class="price-now">S/. 65.00</span>
-            <span class="price-old">S/. 119.00</span>
+            <span class="price-now">S/ 599.00</span>
+            <span class="price-old">S/ 700.00</span>
           </div>
           <button class="btn-add">Añadir al carrito</button>
         </div>
       </div>
 
       <div class="product-card">
-        <a href="producto.html" class="product-img-wrap">
+        <a href="index.html#productos" class="product-img-wrap">
           <img src="images/productos/prod3-a.jpeg" alt="Power Bank" class="img-main">
           <img src="images/productos/prod3-b.jpeg" alt="Power Bank hover" class="img-hover">
           <span class="badge-discount">-20%</span>
+          <span class="badge-agotado">Agotado</span>
         </a>
         <div class="product-info">
           <p class="product-brand">ComuniK2</p>
-          <h3><a href="producto.html">Power Bank Inalámbrico 10,000 mAh</a></h3>
+          <h3><a href="index.html#productos">Silla Ergonómica Full Malla - Dalas - blanco</a></h3>
           <div class="product-stars">★★★★★ <span>(29)</span></div>
           <div class="product-price">
-            <span class="price-now">S/. 89.00</span>
-            <span class="price-old">S/. 110.00</span>
+            <span class="price-now">S/ 599.00</span>
+            <span class="price-old">S/ 700.00</span>
           </div>
-          <button class="btn-add">Añadir al carrito</button>
+          <button class="btn-agotado-card">agotado</button>
         </div>
       </div>
 
-      <div class="product-card">
-        <a href="producto.html" class="product-img-wrap">
+      <div class="product-card" id="agotado">
+        <a href="index.html#productos" class="product-img-wrap">
           <img src="images/productos/prod4-a.jpeg" alt="Mousepad XL" class="img-main">
           <img src="images/productos/prod4-b.jpeg" alt="Mousepad XL hover" class="img-hover">
-          <span class="badge-discount">-15%</span>
+          <span class="badge-discount">-14</span>
+          <span class="badge-agotado">Agotado</span>
         </a>
         <div class="product-info">
           <p class="product-brand">ComuniK2</p>
-          <h3><a href="producto.html">Silla De Escritorio Dex Full Malla - Sentaris</a></h3>
+          <h3><a href="index.html#agotado">Silla Ergonómica Full Malla - Dalas - blanco</a></h3>
           <div class="product-stars">★★★★★ <span>(67)</span></div>
           <div class="product-price">
-            <span class="price-now">S/. 55.00</span>
-            <span class="price-old">S/. 65.00</span>
+            <span class="price-now">S/ 599.00</span>
+            <span class="price-old">S/ 700.00</span>
           </div>
-          <button class="btn-add">Añadir al carrito</button>
+          <button class="btn-agotado-card">agotado</button>
         </div>
       </div>
 
     </div>
   </div>
 </section>
+  
+
 
 <!-- BANNER PROMO FULL -->
 <section class="promo-banner">
   <div class="promo-content">
     <p class="promo-eyebrow">Oferta especial</p>
-    <h2>Hasta 45% de descuento<br>en accesorios seleccionados</h2>
+    <h2>Hasta 14% de descuento<br>en productos deleccionados</h2>
     <p>Solo hasta agotar stock. Aprovecha ahora.</p>
-    <a href="#" class="btn-red">Ver ofertas</a>
+    <a href="#offert" class="btn-red">Ver ofertas</a>
   </div>
 </section>
 
@@ -266,8 +298,8 @@
     </div>
     <div class="stat-div"></div>
     <div class="stat-item">
-      <span class="stat-num">30</span>
-      <span class="stat-label">Días para devoluciones</span>
+      <span class="stat-num">Garantia</span>
+      <span class="stat-label">Para todos los productos</span>
     </div>
   </div>
 </section>
@@ -282,7 +314,7 @@
         <input type="email" placeholder="Tu correo electrónico">
         <button>›</button>
       </div>
-      <a href="reclamaciones.html" class="libro-btn">
+      <a href="pages/reclamaciones.html" class="libro-btn">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
         Libro de Reclamaciones
       </a>
@@ -290,19 +322,18 @@
     <div class="footer-col">
       <h4>Compañía</h4>
       <ul>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="#">Blog</a></li>
+        <li><a href="pages/nosotros.html">Nosotros</a></li>
+        <li><a href="pages/contacto.html">Contacto</a></li>
+        <li><a href="pages/politica.html">Blog</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Ayuda al cliente</h4>
       <ul>
-        <li><a href="#">Tiempos de envío</a></li>
-        <li><a href="#">Política de privacidad</a></li>
-        <li><a href="#">Política de cambios</a></li>
-        <li><a href="#">Política de envíos</a></li>
-        <li><a href="terminos.html">Términos y condiciones</a></li>
+      
+        <li><a href="pages/politica.html">Política de privacidad</a></li>
+        <li><a href="pages/envios.html">Política de envíos</a></li>
+        <li><a href="pages/terminos.html">Términos y condiciones</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -315,14 +346,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Comunik2 S.A.C. — RUC 00000000000. Todos los derechos reservados.</p>
-    <div class="payment-methods">
-      <span>VISA</span>
-      <span>MC</span>
-      <span>AMEX</span>
-      <span>YAPE</span>
-      <span>PLIN</span>
-    </div>
+    <p class="derechos">© 2025 Comunik2 S.A.C. — RUC 00000000000. Todos los derechos reservados.</p>
+    
   </div>
 </footer>
 
