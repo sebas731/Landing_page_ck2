@@ -250,3 +250,8 @@ function cotizarWa() {
   var msg   = `Hola, quiero cotizar este producto:\n${link}\n\nColor: ${color}\n\n¿Tienen stock disponible?`;
   window.open(`https://wa.me/51934468388?text=${encodeURIComponent(msg)}`, '_blank');
 }
+
+// ── MENÚ MÓVIL ──
+document.querySelector('.menu-btn')?.addEventListener('click', function() {
+  document.querySelector('.main-nav').classList.toggle('nav-open');
+});

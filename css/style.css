@@ -504,3 +504,49 @@ footer { background: #111; color: rgba(255,255,255,0.7); }
   margin: 0 auto 14px;
   display: block;
 }
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 16px 20px;
+    gap: 4px;
+    border-bottom: 1px solid #E8E8E8;
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    z-index: 150;
+  }
+  .main-nav.nav-open {
+    display: flex;
+  }
+  .main-nav a {
+    padding: 12px 16px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  .menu-btn {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0 16px;
+    gap: 8px;
+  }
+  .cart-btn {
+    padding: 7px 10px;
+    font-size: 12px;
+    gap: 5px;
+  }
+  .logo {
+    font-size: 18px;
+    flex: 1;
+  }
+  .menu-btn {
+    order: -1;
+  }
+}
