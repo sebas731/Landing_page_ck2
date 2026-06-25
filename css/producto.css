@@ -159,3 +159,46 @@
   .comp-table { grid-template-columns: 1fr; }
   .shipping-timeline { flex-wrap: wrap; gap: 12px; }
 }
+@media (max-width: 900px) {
+  .product-layout,
+  .prod-layout { 
+    grid-template-columns: 1fr; 
+  }
+  .gallery { 
+    position: static; 
+  }
+  .gallery-thumbs {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .thumb {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+  .gallery-main {
+    aspect-ratio: 4/3;
+  }
+}
+
+@media (max-width: 600px) {
+  .pd-trust {
+    grid-template-columns: 1fr;
+  }
+  .shipping-timeline {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .st-line {
+    display: none;
+  }
+  .pd-price-block {
+    flex-wrap: wrap;
+  }
+  .pd-actions {
+    gap: 8px;
+  }
+  .acc-btn {
+    font-size: 13px;
+  }
+}
