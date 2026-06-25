@@ -63,7 +63,7 @@ document.querySelectorAll('[style*="background-image"]').forEach(el => {
 // ─────────────────────────────────────
 // CARRITO
 // ─────────────────────────────────────
-const WA_NUMBER = '51999999999'; // ← cambia por el número real
+const WA_NUMBER = '51955372605'; // ← cambia por el número real
 
 let cart = JSON.parse(localStorage.getItem('ck2-cart') || '[]');
 
@@ -212,3 +212,41 @@ function pedirPorWhatsApp() {
   tick();
   setInterval(tick, 1000);
 })();
+// ver imagenes
+function abrirLightbox(src) {
+  var img   = document.getElementById('lightbox-img');
+  var video = document.getElementById('lightbox-video');
+  video.pause();
+  video.style.display = 'none';
+  img.style.display   = 'block';
+  img.src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function cerrarLightbox() {
+  var video = document.getElementById('lightbox-video');
+  var img   = document.getElementById('lightbox-img');
+  video.pause();
+  video.style.display = 'none';
+  img.style.display   = 'none';
+  document.getElementById('lightbox').classList.remove('open');
+}
+// ver videos
+function abrirLightboxVideo(src) {
+  var img   = document.getElementById('lightbox-img');
+  var video = document.getElementById('lightbox-video');
+  var vsrc  = document.getElementById('lightbox-video-src');
+
+  img.style.display   = 'none';
+  video.style.display = 'block';
+  vsrc.src = src;
+  video.load();
+  video.play();
+
+  document.getElementById('lightbox').classList.add('open');
+}
+function cotizarWa() {
+  var color = document.querySelector('.c-dot.active')?.title || 'no especificado';
+  var link  = window.location.href;
+  var msg   = `Hola, quiero cotizar este producto:\n${link}\n\nColor: ${color}\n\n¿Tienen stock disponible?`;
+  window.open(`https://wa.me/51934468388?text=${encodeURIComponent(msg)}`, '_blank');
+}
